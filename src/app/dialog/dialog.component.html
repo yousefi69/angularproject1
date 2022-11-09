@@ -1,21 +1,19 @@
 <h1 mat-dialog-title>new user</h1>
 <div mat-dialog-content>
-  <!--<mat-form-field appearance="fill">
-    <mat-label>Id</mat-label>
-    <input matInput>
-  </mat-form-field>-->
+  <form [formGroup]="userForm" action="/" method="post">
 
+    <mat-form-field appearance="fill">
+      <input formControlName="userName" matInput placeholder="Name">
+    </mat-form-field>
 
+    <mat-form-field appearance="fill">
+      <input formControlName="userEmail" matInput placeholder="Email">
+    </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Name</mat-label>
-    <input matInput placeholder="Name">
+  </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button mat-raised-button style="margin-left:8px" color="primary" (click)="adduser()" >{{actionBtn}}</button>
 
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Email</mat-label>
-    <input matInput placeholder="Family">
-   
-  </mat-form-field>
 </div>
